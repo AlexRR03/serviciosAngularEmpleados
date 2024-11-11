@@ -1,0 +1,39 @@
+<div>
+  <h1>Plantilla Funcion simple</h1>
+  <form>
+    <select name="selectFuncion" #selectFuncion>
+      @for(funcion of funciones; track funcion){
+        <option value={{funcion}}>
+            {{funcion}}
+        </option>
+      }
+    </select>
+
+    <button (click)="mostrarPlantilla()">
+      Mostrar Plantilla
+    </button>
+
+  </form>
+
+  <table>
+    <thead>
+       <tr>
+        <th>Apellido</th>
+        <th>Funcion</th>
+        <th>Turno</th>
+        <th>Saliro</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(empleado of empleados; track empleado){
+        <tr>
+          <td>{{empleado.apellido}}</td>
+          <td>{{empleado.funcion}}</td>
+          <td>{{empleado.turno}}</td>
+          <td>{{empleado.salario}}</td>
+        </tr>
+      }
+
+    </tbody>
+  </table>
+</div>
